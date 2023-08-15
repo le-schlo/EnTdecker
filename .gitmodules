@@ -1,0 +1,4 @@
+[submodule "EasyChemML"]
+	path = EasyChemML
+	url = https://github.com/le-schlo/EasyChemML
+	branch = EnTdecker
