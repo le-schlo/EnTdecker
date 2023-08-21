@@ -2,3 +2,10 @@
 	path = EasyChemML
 	url = https://github.com/le-schlo/EasyChemML
 	branch = EnTdecker
+
+[submodule "Models/triplet_energy/AttFP/AttentiveFP"]
+	path = Models/triplet_energy/AttFP/AttentiveFP
+	url = https://github.com/le-schlo/AttentiveFP.git
+[submodule "Models/triplet_energy/transformer-cnn"]
+	path = Models/triplet_energy/transformer-cnn
+	url = https://github.com/le-schlo/transformer-cnn.git
