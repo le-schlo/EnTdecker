@@ -1,0 +1,10 @@
+{
+    "dir_name": "/Models/spin_population/",
+    "file_path": "Data/EnTdecker_data_SpinPopulations.csv",
+    "src_vocab_size": 106,
+    "src_len": 100,
+    "epochs": 400,
+    "batch_size": 100,
+    "print_every": 100,
+    "loss_fname": "Loss.csv"
+}
