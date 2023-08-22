@@ -58,7 +58,7 @@ def getDensityArray(tokens):
     """
     Function to extract the array of spin population from the list of tokens
     :param splited_notokens: list of tokens
-    :return:
+    :return: array of spin population
     """
     DensityArray = []
     for tok in tokens:
