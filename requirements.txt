@@ -1,5 +1,5 @@
 pandas
-nunpy
+numpy
 rdkit
 torch
 EasyChemML
