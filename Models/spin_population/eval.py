@@ -28,8 +28,8 @@ file_path = setting_dict.get("file_path")
 device = "cuda:0"
 
 d_model = 512
-heads = 8
-N = 6
+heads = 4
+N = 8
 src_vocab_size = setting_dict.get("src_vocab_size")
 trg_vocab_size = 136
 dropout = 0.1
