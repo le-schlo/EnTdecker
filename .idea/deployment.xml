@@ -5,7 +5,8 @@
       <paths name="l_schl60@catalyst.uni-muenster.de:20003">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/tmp/EnTdecker/" local="$PROJECT_DIR$" web="/" />
+            <mapping local="" />
           </mappings>
         </serverdata>
       </paths>
