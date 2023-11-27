@@ -3,7 +3,7 @@ from EasyChemML.DataImport.Module.CSV import CSV
 from EasyChemML.Encoder.MFF import MFF
 from EasyChemML.Encoder.impl_RdkitConverter.MolRdkitConverter import MolRdkitConverter
 from EasyChemML.Environment import Environment
-from EasyChemML.JobSystem.JobFactory import JobFactory
+from EasyChemML.JobSystem.JobFactory.JobFactory import Job_Factory
 from EasyChemML.JobSystem.JobFactory.Module.Jobs import ModelTrainJob, ModelTrainEvalJob, ModelPredictJob
 from EasyChemML.JobSystem.Utilities.Config import Config
 from EasyChemML.Metrik.MetricStack import MetricStack
@@ -25,7 +25,7 @@ step_size = 100000
 threads = 1
 print('START')
 dataset_name = 'EnTdecker_dataset'
-dataLoader = {('%s' % dataset_name): CSV('Data/EnTdecker_data.csv')}
+dataLoader = {('%s' % dataset_name): CSV('/tmp/EnTdecker/Data/Retrain_Disulfides.csv')}
 di = DataImporter(env)
 bp = di.load_data_InNewBatchPartition(dataLoader, max_chunksize=100000)
 
@@ -51,7 +51,7 @@ dataset_EnTdecker = Dataset(bp[dataset_name],
 
 # ----------------------------------- Training --------------------------------------
 
-job_factory = JobFactory(env)
+job_factory = Job_Factory(env)
 job_runner = LocalRunner(env)
 
 r2score = R2_Score()
@@ -73,7 +73,7 @@ job: ModelTrainEvalJob = job_factory.create_ModelTrainEvalJob(
     dataset_EnTdecker,
     catboost_r,
     metricStack_r,
-    dataset_EnTdecker.get_Split().get_outer_split(0)
+    dataset_EnTdecker.get_Splitset().get_outer_split(0)
 )
 
 job_runner.run_Job(job)
@@ -83,5 +83,5 @@ job_runner.run_Job(job)
 print(f'Train_Metrics: {job.result_metric_TRAIN}')
 print(f'Test_Metrics: {job.result_metric_TEST}')
 
-job.trained_Model.save_model('Models/triplet_energy/CatBoost/model.catb')
+job.trained_Model.save_model('/tmp/EnTdecker/Models/triplet_energy/CatBoost/model.catb')
 env.clean()
