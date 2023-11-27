@@ -107,7 +107,7 @@ task_name = 'EnTdecker'
 tasks = [
     "e_t"
 ]
-raw_filename = "EnTdecker_data.csv"
+raw_filename = "Retrain_Disulfide.csv"
 feature_filename = raw_filename.replace('.csv', '.pickle')
 filename = raw_filename.replace('.csv', '')
 prefix_filename = raw_filename.split('/')[-1].replace('.csv', '')
@@ -236,3 +236,5 @@ for epoch in range(epochs):
 
     if (epoch - best_param["train_epoch"] > 10) and (epoch - best_param["valid_epoch"] > 18):
         break
+
+print('ENDE')
