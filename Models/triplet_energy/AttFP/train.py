@@ -109,11 +109,11 @@ task_name = 'EnTdecker'
 tasks = [
     "e_t"
 ]
-raw_filename = "Retrain_Disulfides.csv"
+raw_filename = "EnTdecker_et_data.csv"
 feature_filename = raw_filename.replace('.csv', '.pickle')
 filename = raw_filename.replace('.csv', '')
 prefix_filename = raw_filename.split('/')[-1].replace('.csv', '')
-smiles_tasks_df = pd.read_csv('/tmp/EnTdecker/Data/' + raw_filename)
+smiles_tasks_df = pd.read_csv('/Data/' + raw_filename)
 
 smilesList = smiles_tasks_df.smiles.values
 print("number of all smiles: ", len(smilesList))
