@@ -14,7 +14,7 @@ from EasyChemML.Model.impl_Pytorch.Models.BERT.FP2MOL_BERT_Trans import FP2MOL_B
 
 # ----------------------------------- Data Preprocessing -----------------------
 os.environ["HDF5_USE_FILE_LOCKING"] = 'False'
-settings_path ="/Models/spin_population/settings.json"
+settings_path ="settings.json"
 
 with open(settings_path, "r") as settings_file:
     setting_dict = json.load(settings_file)
