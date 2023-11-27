@@ -25,7 +25,7 @@ step_size = 100000
 threads = 1
 print('START')
 dataset_name = 'EnTdecker_dataset'
-dataLoader = {('%s' % dataset_name): CSV('/tmp/EnTdecker/Data/Retrain_Disulfides.csv')}
+dataLoader = {('%s' % dataset_name): CSV('/Data/EnTdecker_et_data.csv')}
 di = DataImporter(env)
 bp = di.load_data_InNewBatchPartition(dataLoader, max_chunksize=100000)
 
@@ -83,5 +83,5 @@ job_runner.run_Job(job)
 print(f'Train_Metrics: {job.result_metric_TRAIN}')
 print(f'Test_Metrics: {job.result_metric_TEST}')
 
-job.trained_Model.save_model('/tmp/EnTdecker/Models/triplet_energy/CatBoost/model.catb')
+job.trained_Model.save_model('/Models/triplet_energy/CatBoost/model.catb')
 env.clean()
