@@ -92,8 +92,10 @@ def eval(model, dataset):
             MSE = F.mse_loss(y_pred, torch.Tensor(y_val).squeeze(), reduction='none')
             y_pred_list[task] = np.concatenate([y_pred_list[task], y_pred.cpu().detach().numpy()])
             y_val_list[task] = np.concatenate([y_val_list[task], y_val])
-            eval_MAE_list[task] = np.concatenate([eval_MAE_list[task], MAE.data.squeeze().cpu().numpy()])
-            eval_MSE_list[task] = np.concatenate([eval_MSE_list[task], MSE.data.squeeze().cpu().numpy()])
+            eval_MAE_list[task] = np.concatenate([eval_MAE_list[task], MAE.cpu().detach().numpy()])
+            #MAE.data.squeeze().cpu().numpy()
+            eval_MSE_list[task] = np.concatenate([eval_MSE_list[task], MSE.cpu().detach().numpy()])
+            #MSE.data.squeeze().cpu().numpy()
 
     eval_MAE_normalized = np.array([eval_MAE_list[task].mean() for i, task in enumerate(tasks)])
     eval_MAE = np.multiply(eval_MAE_normalized, np.array(std_list))
@@ -107,11 +109,11 @@ task_name = 'EnTdecker'
 tasks = [
     "e_t"
 ]
-raw_filename = "Retrain_Disulfide.csv"
+raw_filename = "Retrain_Disulfides.csv"
 feature_filename = raw_filename.replace('.csv', '.pickle')
 filename = raw_filename.replace('.csv', '')
 prefix_filename = raw_filename.split('/')[-1].replace('.csv', '')
-smiles_tasks_df = pd.read_csv('Models/triplet_energy/AttFP/' + raw_filename)
+smiles_tasks_df = pd.read_csv('/tmp/EnTdecker/Data/' + raw_filename)
 
 smilesList = smiles_tasks_df.smiles.values
 print("number of all smiles: ", len(smilesList))
@@ -168,7 +170,7 @@ for task in tasks:
     mean_list.append(mean)
     std = training_data[task].std()
     std_list.append(std)
-    mad = training_data[task].mad()
+    mad = abs(training_data[task] - training_data[task].mean()).mean()
     mad_list.append(mad)
     ratio_list.append(std / mad)
     train_df[task + '_normalized'] = (train_df[task] - mean) / std
@@ -184,7 +186,7 @@ weight_decay = 5.0  # also known as l2_regularization_lambda
 learning_rate = 4.0
 radius = 2
 T = 2
-batch_size = 500
+batch_size = 12
 epochs = 400
 
 x_atom, x_bonds, x_atom_index, x_bond_index, x_mask, smiles_to_rdkit_list = get_smiles_array(
@@ -210,7 +212,7 @@ best_param["valid_MSE_normalized"] = 9e8
 for epoch in range(epochs):
     train(model, train_df, optimizer, loss_function)
     train_MAE_normalized, train_MAE, train_MSE_normalized, train_MSE = eval(model, train_df)
-    valid_MAE_normalized, valid_MAE, valid_MSE_normalized, valid_MSE, = eval(model, valid_df)
+    valid_MAE_normalized, valid_MAE, valid_MSE_normalized, valid_MSE = eval(model, valid_df)
     print("EPOCH:\t" + str(epoch) + '\n' \
           #         +"train_MAE_normalized: "+str(train_MAE_normalized)+'\n'\
           #         +"valid_MAE_normalized: "+str(valid_MAE_normalized)+'\n'\
@@ -229,10 +231,7 @@ for epoch in range(epochs):
         best_param["valid_epoch"] = epoch
         best_param["valid_MSE_normalized"] = valid_MSE_normalized.mean()
         if valid_MSE_normalized.mean() < 0.4:
-            test_MAE_normalized, test_MAE, test_MSE_normalized, test_MSE, test_r2_l, test_mae, test_rmse, test_r2 = eval(
-                model, test_df)
-            torch.save(model, sys.argv[
-                1] + 'saved_models/model' + '_' + str(epoch) + '.pt')
+            torch.save(model, 'model' + '_' + str(epoch) + '.pt')
 
     if (epoch - best_param["train_epoch"] > 10) and (epoch - best_param["valid_epoch"] > 18):
         break
