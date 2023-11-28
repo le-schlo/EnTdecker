@@ -14,11 +14,11 @@ from EasyChemML.DataImport.Module.CSV import CSV
 from EasyChemML.Encoder import BertTokenizer, MolRdkitConverter
 from EasyChemML.Environment import Environment
 from EasyChemML.Encoder.impl_Tokenizer.SmilesTokenizer_SchwallerEtAll import SmilesTokenzier
-from EasyChemML.Metrik.Module.DensityEvaluation import DensityMetrics, GraphComparison
+from EasyChemML.Metrik.Module.DensityEvaluation import DensityMetrics
 from EasyChemML.Model.impl_Pytorch.Models.BERT.FP2MOL_BERT_Trans import FP2MOL_Bert
 
 # ----------------------------------- Data Preprocessing -----------------------
-settings_path ="/Models/spin_population/settings.json"
+settings_path ="/tmp/EnTdecker/Models/spin_population/settings.json"
 with open(settings_path, "r") as settings_file:
     setting_dict = json.load(settings_file)
 
@@ -36,7 +36,7 @@ dropout = 0.1
 max_seq_len = setting_dict.get("src_len")
 
 model_object = FP2MOL_Bert(src_vocab_size, trg_vocab_size, N, heads, d_model, dropout, max_seq_len, device)
-p_fname = dir_name + ("model_p_checkpoint.pt")
+p_fname = "/mnt/share/user/employee/l_schl60/project/ML4EnT/SpinDensities/corr_Disulfide/200000_SMI_SD_pcheckpoint.pt"
 model_object.load_model_parameters(p_fname)
 
 env = Environment(WORKING_path_addRelativ='Output')
@@ -109,10 +109,10 @@ for i in range(int(iteration_per_chunk)):
         else:
             smi2smi.append(0)
 
+        num_highest = 10
         Arrays4metric = DensityMetrics(true_DensityArray, DensityArray)
-        num_highest = 3
         R2_perMol.append(Arrays4metric.PearsonR2_np())
-        Ranked.append(Arrays4metric.RankDensities(num_highest=10))
+        Ranked.append(Arrays4metric.RankDensities(num_highest=num_highest))
 
     if (i + 1) % print_every == 0:
         accuracy = np.sum(positive_prediction) / (iter_steps * batch_size)
@@ -122,7 +122,7 @@ for i in range(int(iteration_per_chunk)):
 
         print(f'time = {(time.time() - start) // 60}, '
               f'exact accuracy = {accuracy: .3f}, ' f'smi2smi accuracy = {smi_acc: .3f}, '
-              f'Top{num_highest} ' f'Ranked Score = {Ran: .3f}, '
+              f'Top{num_highest/2} ' f'Ranked Score = {Ran: .3f}, '
               f'Average R2 = {R2_acc: .3f}, ' f'{(time.time() - temp): .3f}s per {print_every}')
 
         temp = time.time()
