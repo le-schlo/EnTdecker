@@ -97,3 +97,4 @@ for count in range(EPOCHS):
 p_fname = dir_name + ("model_p_checkpoint.pt")
 o_fname = dir_name + ("model_o_checkpoint.pt")
 model_object.save_model(p_fname, o_fname)
+print('ENDE')

@@ -1,10 +1,10 @@
 {
     "dir_name": "/Models/spin_population/",
-    "file_path": "Data/EnTdecker_data_SpinPopulations.csv",
+    "file_path": "/tmp/EnTdecker/Data/Retrain_SD.csv",
     "src_vocab_size": 106,
     "src_len": 100,
-    "epochs": 400,
-    "batch_size": 100,
-    "print_every": 100,
+    "epochs": 10,
+    "batch_size": 10,
+    "print_every": 1,
     "loss_fname": "Loss.csv"
 }
