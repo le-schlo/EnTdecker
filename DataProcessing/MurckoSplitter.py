@@ -1,12 +1,18 @@
+import random
+
 from rdkit import Chem
+from rdkit.Chem import AllChem
 from rdkit.Chem.Scaffolds import MurckoScaffold
 from rdkit.Chem.rdmolops import FastFindRings
+
+from collections import defaultdict
+
 def StructuralSplitter_Murcko(dataset, frac_train=0.8, frac_val=0.1, frac_test=0.1, random_state=42):
     '''
     This code for splitting based on the Murcko scaffolds is based on the implementation of Li et al. (https://doi.org/10.1021/acsomega.1c04017)
     and can be found in their public github repo (https://doi.org/10.1021/acsomega.1c04017).
 
-    :param dataset: Dataset to be split according to the molecules scaffolds
+    :param dataset: Dataset to be split according to the molecules scaffolds. Should be a pandas dataframe with the molecules as SMILES in a column named 'smiles'
     :param frac_train: fraction of the dataset to be used for training
     :param frac_val: fraction of the dataset to be used for validation
     :param frac_test: fraction of the dataset to be used for testing
@@ -72,4 +78,3 @@ def StructuralSplitter_Murcko(dataset, frac_train=0.8, frac_val=0.1, frac_test=0
     for idx in test_indices:
         test_set.append(dictidxsmi[idx])
     return sorted(list(train_indices)), sorted(list(val_indices)), sorted(list(test_indices))
-
