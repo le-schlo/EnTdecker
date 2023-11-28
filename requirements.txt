@@ -1,5 +1,8 @@
-pandas
-numpy
-rdkit
-torch
-chemprop
+pandas==2.1.3
+numpy==1.24.4
+rdkit==2023.9.2
+torch==2.1.1
+scikit-learn==1.3.2
+chemprop==1.6.1
+descriptastorus==2.6.1
+scipy==1.9.0
