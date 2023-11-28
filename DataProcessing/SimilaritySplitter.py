@@ -19,7 +19,7 @@ def SimilaritySplit(
         Parameters
         ----------
         dataset: Dataset
-            Dataset to be split.
+            Dataset to be split. Should be a pandas DataFrame with a molecules stored as SMILES in a column named "smiles"
         frac_train: float, optional (default 0.8)
             The fraction of data to be used for the training split.
         frac_valid: float, optional (default 0.1)
