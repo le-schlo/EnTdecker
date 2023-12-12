@@ -9,7 +9,7 @@ For installation run
 git clone --recurse-submodules https://github.com/le-schlo/EnTdecker_public.git
 # option --recurse-submodules is required in order to clone the respective submodules
 
-cd entdecker_public
+cd EnTdecker_public
 pip install -r requirements.txt
 
 cd EasyChemML
