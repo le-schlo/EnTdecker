@@ -1,6 +1,6 @@
 {
     "dir_name": "/Models/spin_population/",
-    "file_path": "/Data/Retrain_SD.csv",
+    "file_path": "/Data/EnT_SD_data.csv",
     "src_vocab_size": 106,
     "src_len": 100,
     "epochs": 10,
