@@ -1,0 +1,9 @@
+SMILES,SMILES_SD
+n1nc2c3c(nnc4c3c1SS4)SS2,n_4_1n_1_c_1_2c_2_3c_2_(n_1_n_4_c_1_4c_1_3c_2_1S_2_S_1_4)S_2_S_2_2
+Fc1ccc(SSc2ccc(F)cc2Cl)c(Cl)c1,F_1_c_2_1c_1_c_2_c_1_(S_4_S_4_c_1_2c_2_c_1_c_2_(F_1_)c_1_c_2_2Cl_1_)c_2_(Cl_1_)c_1_1
+COC(=O)C1CCSS1,C_1_O_1_C_1_(=O_1_)C_1_1C_1_C_1_S_5_S_4_1
+OCCOCCOCCOCCSSc1ccccn1,O_1_C_1_C_1_O_1_C_1_C_1_O_1_C_1_C_1_O_1_C_1_C_1_S_5_S_4_c_1_1c_2_c_1_c_2_c_1_n_2_1
+CC(C)(CCC(=O)O)SSc1ccccn1,C_1_C_1_(C_1_)(C_1_C_1_C_1_(=O_1_)O_1_)S_5_S_4_c_1_1c_1_c_1_c_1_c_1_n_1_1
+c1cc2c3c(cccc3c1)SS2,c_1_1c_3_c_1_2c_3_3c_1_(c_3_c_1_c_4_c_4_3c_1_1)S_3_S_1_2
+CC(Cc1ccco1)NC(=O)CCCCC1CCSS1,C_1_C_1_(C_1_c_1_1c_1_c_1_c_1_o_1_1)N_1_C_1_(=O_1_)C_1_C_1_C_1_C_1_C_1_1C_1_C_1_S_5_S_5_1
+CSSC(C)(C)CCC(=O)O,C_1_S_5_S_5_C_1_(C_1_)(C_1_)C_1_C_1_C_1_(=O_1_)O_1_
