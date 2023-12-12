@@ -2,7 +2,7 @@ import pandas as pd
 from rdkit import Chem
 
 
-df = pd.read_csv('/Data/EnTdecker_data.csv')
+df = pd.read_csv('/Data/EnT_data.csv')
 
 match = []
 for smi in df.smiles.to_list():
