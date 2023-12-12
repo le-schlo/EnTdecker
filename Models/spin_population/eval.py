@@ -18,7 +18,7 @@ from EasyChemML.Metrik.Module.DensityEvaluation import DensityMetrics
 from EasyChemML.Model.impl_Pytorch.Models.BERT.FP2MOL_BERT_Trans import FP2MOL_Bert
 
 # ----------------------------------- Data Preprocessing -----------------------
-settings_path ="/tmp/EnTdecker/Models/spin_population/settings.json"
+settings_path ="/Models/spin_population/settings.json"
 with open(settings_path, "r") as settings_file:
     setting_dict = json.load(settings_file)
 
@@ -36,7 +36,7 @@ dropout = 0.1
 max_seq_len = setting_dict.get("src_len")
 
 model_object = FP2MOL_Bert(src_vocab_size, trg_vocab_size, N, heads, d_model, dropout, max_seq_len, device)
-p_fname = "/mnt/share/user/employee/l_schl60/project/ML4EnT/SpinDensities/corr_Disulfide/200000_SMI_SD_pcheckpoint.pt"
+p_fname = "/Models/spin_population/200000_SMI_SD_pcheckpoint.pt"
 model_object.load_model_parameters(p_fname)
 
 env = Environment(WORKING_path_addRelativ='Output')
