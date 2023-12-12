@@ -6,7 +6,7 @@ The models can also be used in a web application: entdecker.uni-muenster.de
 ## Installation
 For installation run
 ```
-git clone --recurse-submodules git://github.com/le-schlo/entdecker_public.git
+git clone --recurse-submodules git://github.com/le-schlo/Entdecker_public.git
 # option --recurse-submodules is required in order to clone the respective submodules
 
 cd entdecker_public
