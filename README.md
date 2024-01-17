@@ -16,7 +16,7 @@ cd EasyChemML
 pip install ./
 ```
 ## Train models
-Sample scripts to train the models can be found in the ```Models``` directory
+Sample scripts to train the models can be found in the [Models](Models) directory
 
 ## Use pretrained models
 Pretrained models can be downloaded from [Zenodo](https://zenodo.org/uploads/10391170)
