@@ -19,5 +19,6 @@ pip install ./
 Sample scripts to train the models can be found in the ```Models``` directory
 
 ## Use pretrained models
-Pretrained models can be downloaded from [Zenodo/EnTdecker](https://zenodo.org/uploads/10391170)
+Pretrained models can be downloaded from [Zenodo](https://zenodo.org/uploads/10391170)
+
 Sample scripts to use these for obtaining predictions can be found under [Models/triplet_energy/chemprop/eval.py](Models/triplet_energy/chemprop/eval.py) and [Models/spin_population/eval.py](Models/spin_population/eval.py)
