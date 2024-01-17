@@ -3,9 +3,9 @@ This repository contains the code for the prediction of triplet energies and spi
 
 The models can also be used in a web application: [entdecker.uni-muenster.de](http://entdecker.uni-muenster.de)
 
-<center>
-<img src="images/TOC.png" width="60%">
-</center>
+<p align="center">
+  <img src="images/TOC.png" width="60%" />
+</p>
 
 ## Installation
 For installation run
