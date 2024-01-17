@@ -36,7 +36,7 @@ dropout = 0.1
 max_seq_len = setting_dict.get("src_len")
 
 model_object = FP2MOL_Bert(src_vocab_size, trg_vocab_size, N, heads, d_model, dropout, max_seq_len, device)
-p_fname = "/Models/spin_population/200000_SMI_SD_pcheckpoint.pt"
+p_fname = "/Models/spin_population/spin_population.pt"
 model_object.load_model_parameters(p_fname)
 
 env = Environment(WORKING_path_addRelativ='Output')
