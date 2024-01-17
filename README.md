@@ -3,9 +3,7 @@ This repository contains the code for the prediction of triplet energies and spi
 
 The models can also be used in a web application: [entdecker.uni-muenster.de](http://entdecker.uni-muenster.de)
 
-
-![alt text](https://github.com/le-schlo/EnTdecker/edit/main/images/TOC.png)
-
+![alt text](https://github.com/le-schlo/EnTdecker/edit/main/images/TOC.png?raw=true)
 
 ## Installation
 For installation run
