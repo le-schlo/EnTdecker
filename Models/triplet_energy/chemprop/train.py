@@ -6,7 +6,7 @@ import sys
 arguments = [
     '--data_path', '/Data/EnTdecker_data.csv',
     '--dataset_type', 'regression',
-    '--save_dir', '/Models/triplet_energy/CatBoost/chemprop/',
+    '--save_dir', '/Models/triplet_energy/chemprop/',
     '--features_generator', 'rdkit_2d_normalized',
     '--no_features_scaling',
 ]
