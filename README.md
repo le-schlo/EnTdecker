@@ -16,9 +16,9 @@ cd EasyChemML
 pip install ./
 ```
 ## Train models
-Sample scripts to train the models can be found in the [Models](Models) directory
+Sample scripts to train the models can be found in the [Models](Models) directory and the respective sub-directories.
 
 ## Use pretrained models
-Pretrained models can be downloaded from [Zenodo](https://zenodo.org/uploads/10391170)
+Pretrained models can be downloaded from [Zenodo](https://zenodo.org/uploads/10391170).
 
-Sample scripts to use these for obtaining predictions can be found under [Models/triplet_energy/chemprop/eval.py](Models/triplet_energy/chemprop/eval.py) and [Models/spin_population/eval.py](Models/spin_population/eval.py)
+Sample scripts to use these for obtaining predictions can be found under [Models/triplet_energy/chemprop/eval.py](Models/triplet_energy/chemprop/eval.py) and [Models/spin_population/eval.py](Models/spin_population/eval.py).
