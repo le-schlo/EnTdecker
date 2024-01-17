@@ -1,7 +1,7 @@
 # EnTdecker
 This repository contains the code for the prediction of triplet energies and spin populations of organic molecules as described in this paper: TBA
 
-The models can also be used in a web application: entdecker.uni-muenster.de
+The models can also be used in a web application: [entdecker.uni-muenster.de](entdecker.uni-muenster.de)
 
 ## Installation
 For installation run
