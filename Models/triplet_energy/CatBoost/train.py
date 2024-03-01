@@ -25,7 +25,7 @@ step_size = 100000
 threads = 1
 print('START')
 dataset_name = 'EnTdecker_dataset'
-dataLoader = {('%s' % dataset_name): CSV('/Data/EnTdecker_et_data.csv')}
+dataLoader = {('%s' % dataset_name): CSV('/Data/EnT_data.csv')}
 di = DataImporter(env)
 bp = di.load_data_InNewBatchPartition(dataLoader, max_chunksize=100000)
 
