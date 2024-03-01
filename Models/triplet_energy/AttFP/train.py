@@ -109,7 +109,7 @@ task_name = 'EnTdecker'
 tasks = [
     "e_t"
 ]
-raw_filename = "EnTdecker_et_data.csv"
+raw_filename = "EnT_data.csv"
 feature_filename = raw_filename.replace('.csv', '.pickle')
 filename = raw_filename.replace('.csv', '')
 prefix_filename = raw_filename.split('/')[-1].replace('.csv', '')
