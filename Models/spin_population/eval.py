@@ -120,10 +120,9 @@ for i in range(int(iteration_per_chunk)):
         R2_acc = np.sum(R2_perMol) / (iter_steps * batch_size)
         Ran = np.sum(Ranked) / (iter_steps * batch_size)
 
-        print(f'time = {(time.time() - start) // 60}, '
-              f'exact accuracy = {accuracy: .3f}, ' f'smi2smi accuracy = {smi_acc: .3f}, '
-              f'Top{num_highest/2} ' f'Ranked Score = {Ran: .3f}, '
-              f'Average R2 = {R2_acc: .3f}, ' f'{(time.time() - temp): .3f}s per {print_every}')
+        print(f'exact accuracy = {accuracy: .3f}, ' f'smi2smi accuracy = {smi_acc: .3f}, '
+              f'Top {num_highest/2} ' f'Ranked Score = {Ran: .3f}, '
+              f'Average R2 = {R2_acc: .3f}, ' f'{(time.time() - temp): .3f}s per {print_every*batch_size} molecules')
 
         temp = time.time()
 
