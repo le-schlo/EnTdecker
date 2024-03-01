@@ -13,9 +13,11 @@ For installation run
 git clone --recurse-submodules https://github.com/le-schlo/EnTdecker.git
 # option --recurse-submodules is required in order to clone the respective submodules
 
+#go to EnTdecker directory and install all required dependencies
 cd EnTdecker
 pip install -r requirements.txt
 
+#Additionally you need to go to the EasyChemML directory and install the necessary dependencies separately.
 cd EasyChemML
 pip install ./
 ```
@@ -38,6 +40,41 @@ rearranged SMILES including the binned spin population.
 
 ## Train models
 Sample scripts to train the models can be found in the [Models](Models) directory and the respective sub-directories.
+### Triplet energy
+
+Scripts for training the models for predicting the triplet energies can be found in
+`Models/triplet_energy`. For training an AttentiveFP-GNN model the file
+`Models/triplet_energy/AttFP/train.py` can be run. This code was slightly adapted from the [original
+repository](https://github.com/OpenDrugAI/AttentiveFP). For training a chemprop-D-MPNN model
+the file `Models/triplet_energy/chemprop/train.py` can be run. Information about defining additional
+hyperparameters can be found in the documentation of [chemprop](https://chemprop.readthedocs.io/en/latest/index.html).
+For training a transformer-CNN model the file
+`Models/triplet_energy/transformer-cnn/transformer-cnn.py` can be run. All parameters for training the
+model need to be specified in the `Models/triplet_energy/transformer-cnn/config.cfg` file. Please note
+that running the code for the transformer-CNN code requires different dependencies than all other
+code. A tutorial on how to set the environment up can be found in the
+`Models/triplet_energy/transformer-cnn/README.md` file. For training a CatBoost-GDBT model with
+the [MFF fingerprint](https://doi.org/10.1016/j.chempr.2020.02.017) the file `Models/triplet_energy/CatBoost/train.py` can be run.
+
+### Spin population
+
+Scripts for training and evaluating the sequence-to-sequence model for predicting the spin population
+can be found under `Models/spin_population/train.py` and `Models/spin_population/eval.py`.
+
+The file `Models/spin_population/settings.json` contains parameters for running the training as well as for running the evaluation.
+
+“dir_name”: provide the path to the directory were the code is executed. This ensures that
+the model checkpoints and the results of the evaluation are saved in the correct
+location.
+“file_path”: provide the path to the data file used for training when using running the
+train.py or for evaluation when running the eval.py.
+“src_vocab_size”: specify the size of the vocabulary of the inputs. Default: 106.
+“src_len”: specify the maximum length of the input sequence. Default: 100.
+“epochs”: specify the number of epochs used for training the model.
+“batch_size”: specify the batch size during training and evaluation.
+“print_every”: specify the frequency an output is printed.
+“loss_fname”: specify the name of the file the loss will be saved in during training.
+
 
 ## Use pretrained models
 Pretrained models can be downloaded from [Zenodo](https://zenodo.org/uploads/10391170).
