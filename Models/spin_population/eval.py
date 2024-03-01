@@ -31,7 +31,7 @@ d_model = 512
 heads = 4
 N = 8
 src_vocab_size = setting_dict.get("src_vocab_size")
-trg_vocab_size = 111
+trg_vocab_size = 136
 dropout = 0.1
 max_seq_len = setting_dict.get("src_len")
 
