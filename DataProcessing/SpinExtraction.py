@@ -12,7 +12,7 @@ def returnSmileswithSpinDensity(smi, spin_population):
 
     invalid_characters=['=', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
                         '(', ')', '[', ']', '@', 'H', '#', '/', "\\", '-', '+', '[H]']
-    SMI_REGEX_PATTERN = r"""(\[[^\]]+]|Br?|Cl?|N|O|S|P|F|I|b|c|n|o|s|p|\(|\)|\.|=|#|-|\+|\\|\/|:|~|@|\?|>>?|\*|\$|\%[0-9]{2}|[0-9])"""
+    SMI_REGEX_PATTERN = r"""(\[[^\]]+]|Br?|Cl?|N|O|S|P|F|I|b|c|n|o|s|p|\(|\)|_0_|_1_|_2_|_3_|_4_|_5_|\.|=|#|-|\+|\\|\/|:|~|@|\?|>>?|\*|\$|\%[0-9]{2}|[0-9])"""
 
     bins = np.array([-1,0.07,0.2,0.4,0.8,2])
     digitized = np.digitize(spin_population, bins)
