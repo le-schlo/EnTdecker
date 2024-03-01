@@ -4,7 +4,7 @@ import torch
 import sys
 
 arguments = [
-    '--data_path', '/Data/EnTdecker_data.csv',
+    '--data_path', '/Data/EnT_data.csv',
     '--dataset_type', 'regression',
     '--save_dir', '/Models/triplet_energy/chemprop/',
     '--features_generator', 'rdkit_2d_normalized',
