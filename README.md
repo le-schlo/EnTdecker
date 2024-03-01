@@ -65,16 +65,15 @@ The file `Models/spin_population/settings.json` contains parameters for running 
 
 “dir_name”: provide the path to the directory were the code is executed. This ensures that
 the model checkpoints and the results of the evaluation are saved in the correct
-location.
+location<br>
 “file_path”: provide the path to the data file used for training when using running the
-train.py or for evaluation when running the eval.py.
-“src_vocab_size”: specify the size of the vocabulary of the inputs. Default: 106.
-“src_len”: specify the maximum length of the input sequence. Default: 100.
-“epochs”: specify the number of epochs used for training the model.
-“batch_size”: specify the batch size during training and evaluation.
-“print_every”: specify the frequency an output is printed.
+train.py or for evaluation when running the eval.py<br>
+“src_vocab_size”: specify the size of the vocabulary of the inputs. Default: 106<br>
+“src_len”: specify the maximum length of the input sequence. Default: 100<br>
+“epochs”: specify the number of epochs used for training the model<br>
+“batch_size”: specify the batch size during training and evaluation<br>
+“print_every”: specify the frequency an output is printed<br>
 “loss_fname”: specify the name of the file the loss will be saved in during training.
-
 
 ## Use pretrained models
 Pretrained models can be downloaded from [Zenodo](https://zenodo.org/uploads/10391170).
