@@ -36,7 +36,7 @@ energy prediction (`RandomSplitter.py`, `MurckoSplitter.py`, `SimilaritySplitter
 well as the data processing for the spin population prediction. The file `SpinExtraction.py` contains a
 function that returns the input for the sequence-to-sequence model given a smiles and the
 corresponding spin population. The file `TargetRearrangement.py` contains a function that returns
-rearranged SMILES including the binned spin population.
+rearranged SMILES maintaing the correct order of binned spin population.
 
 ## Train models
 Sample scripts to train the models can be found in the [Models](Models) directory and the respective sub-directories.
