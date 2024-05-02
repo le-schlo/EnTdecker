@@ -1,5 +1,5 @@
 # EnTdecker
-This repository contains the code for the prediction of triplet energies and spin populations of organic molecules as described in this [paper] (https://pubs.acs.org/doi/10.1021/jacs.4c01352).
+This repository contains the code for the prediction of triplet energies and spin populations of organic molecules as described in this [paper](https://pubs.acs.org/doi/10.1021/jacs.4c01352).
 
 The models can also be used in a web application: [entdecker.uni-muenster.de](http://entdecker.uni-muenster.de)
 
