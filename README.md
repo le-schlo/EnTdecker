@@ -81,7 +81,7 @@ Pretrained models can be downloaded from [Zenodo](https://zenodo.org/uploads/103
 Sample scripts to use these for obtaining predictions can be found under [Models/triplet_energy/chemprop/eval.py](Models/triplet_energy/chemprop/eval.py) and [Models/spin_population/eval.py](Models/spin_population/eval.py).
 
 ## Citation
-'''
+```
 @article{doi:10.1021/jacs.4c01352,
 author = {Schlosser, Leon and Rana, Debanjan and Pflüger, Philipp and Katzenburg, Felix and Glorius, Frank},
 title = {EnTdecker − A Machine Learning-Based Platform for Guiding Substrate Discovery in Energy Transfer Catalysis},
@@ -95,4 +95,4 @@ note ={PMID: 38695558},
 URL = {https://doi.org/10.1021/jacs.4c01352},
 eprint = {https://doi.org/10.1021/jacs.4c01352}
 }
-'''
+```
